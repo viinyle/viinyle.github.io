@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Moulin - Work - Typecooker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="sticky-header">
+        <nav class="nav">
+            <div class="subnav">
+                <a class="N1 current" href="work.html">WORK</a>
+                <a class="N2" href="about.html">ABOUT</a>
+            </div>
+            <a class="name" href="work.html"><img src="LOGOS/viinyle-logo.svg" alt="viinyle" width="170"
+                    height="170"></a>
+            <a class="insta" href="https://www.instagram.com/_viinyle/"><img src="LOGOS/instagram-seeklogo.com.svg"
+                    alt="instagram" width="48" height="48"></a>
+        </nav>
+    </header>
+
+    <body>
+        <div class="slider-container">
+            <div class="menu">
+                <label for="slide-dot-1"></label>
+                <label for="slide-dot-2"></label>
+                <label for="slide-dot-3"></label>
+                <label for="slide-dot-4"></label>
+                <label for="slide-dot-5"></label>
+            </div>
+
+            <input class="slide-input" id="slide-dot-1" type="radio" name="slides" checked>
+            <img class="slide-img" src="projets/typecooker/thin.png">
+
+            <input class="slide-input" id="slide-dot-2" type="radio" name="slides">
+            <img class="slide-img" src="projets/typecooker/fume.png">
+
+            <input class="slide-input" id="slide-dot-3" type="radio" name="slides">
+            <img class="slide-img" src="projets/typecooker/ASM.png">
+
+            <input class="slide-input" id="slide-dot-4" type="radio" name="slides">
+            <img class="slide-img" src="projets/typecooker/groh.png">
+
+            <input class="slide-input" id="slide-dot-5" type="radio" name="slides">
+            <img class="slide-img" src="projets/typecooker/spik.png">
+        </div>
+        <script>
+            const slides = document.querySelectorAll('.slide-input');
+            const labels = document.querySelectorAll('.menu label');
+            let lastIndex = 0;
+        
+            slides.forEach((slide, index) => {
+                slide.addEventListener('change', () => {
+                    labels.forEach(label => label.style.backgroundColor = '');
+                    labels[index].style.backgroundColor = 'grey';
+        
+                    if (lastIndex > index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-left');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-right');
+                    } else if (lastIndex < index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-right');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-left');
+                    }
+                    lastIndex = index;
+                   
+                    setTimeout(() => {
+                        document.querySelectorAll('.slide-img').forEach(img => {
+                            img.classList.remove('slide-enter-right', 'slide-enter-left');
+                        });
+                    }, 1000);
+                });
+            });
+        </script>
+        
+        <h1 class="h1-odz">Typecooker</h1>
+
+        <div class="grid-texte">
+            <p class="T1-en">Following the instructions on the typecooker website created by Erik van Blokland, I
+                carried out a number of typographic experiments, with the aim of becoming even more familiar with
+                typeface design and its various specificities, such as different types of contrast.
+
+                I particularly enjoyed trying out different tools like flat nibs, nibs, as well as different felts and
+                inks. Also it’s a project that I’ll continue to nurture, and I’m currently working on an edition to
+                bring together my different typographies.</p>
+            <p class="T1-fr">En suivant les instructions du site Web typecooker créé par Erik van Blokland, j'ai réalisé
+                un certain nombre d'expériences typographiques, dans le but de me familiariser encore plus avec la
+                conception de caractères et ses diverses spécificités, telles que les différents types de contraste.
+
+                J'ai particulièrement apprécié essayer différents outils tels que les plumes plates, les pointes, ainsi
+                que différents feutres et encres. C'est aussi un projet que je vais continuer à nourrir, et je travaille
+                actuellement sur une édition qui rassemblera mes différentes typographies.</p>
+            </div>
+
+         <div class="grid-petites">
+            <img class="child-1" src="projets/typecooker/kinop.png" alt="GAB5">
+            <img class="child-2" src="projets/typecooker/minuit.png" alt="boite3">
+            <img class="child-3" src="projets/typecooker/tiad.png" alt="GAB7">
+            <img class="child-4" src="projets/typecooker/wip.png" alt="boite6">
+            <img class="child-5" src="projets/typecooker/umla.png" alt="boite7">
+            <img class="child-6" src="projets/typecooker/clux.png" alt="boite8">
+            <img class="child-7" src="projets/typecooker/chelou.png" alt="boite9">
+            <img class="child-8" src="projets/typecooker/yam.png" alt="boite10">
+
+            <img class="scanTYPE1" src="projets/typecooker/typecooker1.png" alt="scantype1">
+            <img class="scanTYPE2" src="projets/typecooker/typecooker2.png" alt="scantype2">
+        </div>
+    </body>
+
+</html>
