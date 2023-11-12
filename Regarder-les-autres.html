@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Moulin - Work - Photography</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="sticky-header">
+        <nav class="nav">
+            <div class="subnav">
+                <a class="N1 current" href="work.html">WORK</a>
+                <a class="N2" href="about.html">ABOUT</a>
+            </div>
+            <a class="name" href="work.html"><img src="LOGOS/viinyle-logo.svg" alt="viinyle" width="170"
+                    height="170"></a>
+            <a class="insta" href="https://www.instagram.com/_viinyle/"><img src="LOGOS/instagram-seeklogo.com.svg"
+                    alt="instagram" width="48" height="48"></a>
+        </nav>
+    </header>
+
+    <body>
+        <div class="slider-container">
+            <div class="menu">
+                <label for="slide-dot-1"></label>
+                <label for="slide-dot-2"></label>
+                <label for="slide-dot-3"></label>
+                <label for="slide-dot-4"></label>
+                <label for="slide-dot-5"></label>
+            </div>
+
+            <input class="slide-input" id="slide-dot-1" type="radio" name="slides" checked>
+            <img class="slide-img" src="projets/regarder-les-autres.JPG">
+
+            <input class="slide-input" id="slide-dot-2" type="radio" name="slides">
+            <img class="slide-img" src="projets/regarder/regarder1.png">
+
+            <input class="slide-input" id="slide-dot-3" type="radio" name="slides">
+            <img class="slide-img" src="projets/regarder/regarder4.png">
+
+            <input class="slide-input" id="slide-dot-4" type="radio" name="slides">
+            <img class="slide-img" src="projets/regarder/regarder3.png">
+
+            <input class="slide-input" id="slide-dot-5" type="radio" name="slides">
+            <img class="slide-img" src="projets/regarder/regarder6.png">
+        </div>
+
+        <script>
+            const slides = document.querySelectorAll('.slide-input');
+            const labels = document.querySelectorAll('.menu label');
+            let lastIndex = 0;
+        
+            slides.forEach((slide, index) => {
+                slide.addEventListener('change', () => {
+                    labels.forEach(label => label.style.backgroundColor = '');
+                    labels[index].style.backgroundColor = 'grey';
+        
+                    if (lastIndex > index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-left');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-right');
+                    } else if (lastIndex < index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-right');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-left');
+                    }
+                    lastIndex = index;
+                   
+                    setTimeout(() => {
+                        document.querySelectorAll('.slide-img').forEach(img => {
+                            img.classList.remove('slide-enter-right', 'slide-enter-left');
+                        });
+                    }, 1000);
+                });
+            });
+        </script>
+        
+        <h1 class="h1-odz">Regarder les autres</h1>
+
+        <div class="grid-texte">
+            <p class="T1-en">"Regarder les autres est parfois surprenant". In this edition, I worked on the social
+                aspect of my photographic interests through eight different concepts. During my photographic walks, I
+                trained my eye to spot details to sharpen my speed in capturing and then photographing. The concept that
+                I'll keep in mind is "Attirer le regard", the first of the series. In it, I tried to materialize the
+                photographer, to make him tangible, without physically showing him. This research involves working on
+                the glance.
+                Thanks to this project, I've been able to deepen my love of street photography. I'll be pursuing many of
+                these concepts in the future. I also had a great time during the production and finishing of this
+                edition, with all those papers stuck in the binding.</p>
+            <p class="T1-fr">"Regarder les autres est parfois surprenant". Dans cette édition, je me suis intéressée à
+                l'aspect social de mes intérêts photographiques à travers huit différents concepts. Durant mes balades
+                photographiques, j'ai entrainé mon œil à repérer les détails pour aiguiser ma rapidité à capter puis
+                photographier. Le concept que je retiendrai serait "Attirer le regard", le premier concept de la série.
+                J'essaye dans ce dernier de matérialiser le photographe, de le rendre tangible, sans physiquement le
+                montrer. Cette recherche passant notamment par un travail sur le regard. 
+                J'ai pu, grâce à ce projet,
+                approfondir mon amour pour la photographie de rue. Je continuerai à l'avenir certains concepts. Je me
+                suis également particulièrement amusée durant l'élaboration et le façonnage de cette édition avec ces
+                papiers coincés dans la reliure.</p>
+                </div>
+
+         <div class="grid-petites">
+            <img class="child-1" src="projets/regarder/R5.png" alt="R5">
+            <img class="child-2" src="projets/regarder/R6.png" alt="R6">
+            <img class="child-3" src="projets/regarder/R8.png" alt="R8">
+            <img class="child-4" src="projets/regarder/R7.png" alt="R7">
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,398 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    color: black;
+    padding: 0px 5%;
+    z-index: 200;
+}
+
+.a-about{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 170px 1fr;
+    align-items: center;
+}
+
+.current {
+    font-weight: bold;
+}
+
+.insta {
+    justify-self: end;
+}
+
+.name {
+    justify-self: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.subnav {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 24px;
+    justify-self: start;
+}
+
+/*-------------------------------------------WIP BANDEAU-------------------------------------------*/
+.wip {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 1.5%;
+    transform: translateY(-50%);
+    z-index: 210;
+  
+    }
+    .txt {
+    white-space: nowrap;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: scrollTxt 7s linear infinite;
+    margin-top: 10px;
+    padding: 5px;
+    padding-right: 25%;
+    padding-left: 25%;
+    }
+    
+    .t1 {
+    background-color: rgb(245, 191, 79);
+    }
+    .t2 {
+    background-color: rgb(245, 191, 79);
+    }
+    .t3 {
+    background-color: rgb(245, 191, 79);
+    }
+    .t4 {
+   
+    background-color: rgb(245, 191, 79);
+    }
+  
+    @keyframes scrollTxt {
+    0%{
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+    }
+    /*-------------------------------------------WIP BANDEAU-------------------------------------------*/
+
+.grid img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    transform: scale(1);
+}
+
+.grid a:hover img{
+    transform: scale(0.97);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 6px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.item:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.item:nth-child(4) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.item:nth-child(5) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.item:nth-child(7) {
+    grid-column: span 2;
+    grid-row: span 2;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.item:nth-child(8) {
+    grid-column: span 2;
+    grid-row: span 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/*-----------------------------------------------SLIDER----------------------------------------------*/
+.slider-container {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+    height: 350px;
+    overflow: hidden;
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+.menu label {
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50px;
+    margin: 0 0.2em 1em;
+}
+
+.menu label:hover,
+.menu label:focus{
+    background: gray;
+}
+
+.slide-input {
+    opacity: 0;
+}
+
+slide-input:checked + label {
+	background-color: grey;
+}
+
+.slide-img {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    transition: left 0s 0.25s;
+}
+
+[id^="slide"]:checked+.slide-img {
+    left: 0;
+    z-index: 100;
+}
+
+.slide-dot-1{
+    background: gray;
+}
+
+.slide-enter-right {
+	transition: left 0.25s ease-out;
+	left: 0;
+}
+
+.slide-enter-left {
+	transition: left 0.25s ease-out;
+	left: 100%;
+}
+
+
+/*--------------------------------------------------FIN SLIDER-------------------------------------------*/
+
+.h1-odz {
+    text-transform: uppercase;
+    font-size: 40pt;
+    text-align: center;
+
+}
+.grid-texte {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+
+
+.T1-en {
+    font-family: 'Space Grotesk', sans-serif;
+    grid-column: 2/4;
+    grid-row: 1;
+}
+
+.T1-fr {
+    font-style: italic;
+    font-family: 'Space Grotesk', sans-serif;
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+.grid-petites {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-petites img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    transform: scale(1);
+}
+
+.child-1{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.child-2{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.child-3{
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.child-4{
+    grid-column: 5;
+    grid-row: 3;
+}
+
+.child-5{
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.child-6{
+    grid-column: 3;
+    grid-row: 4;
+}
+
+.child-7{
+    grid-column: 4;
+    grid-row: 4;
+}
+
+.child-8{
+    grid-column: 5;
+    grid-row: 4;
+}
+
+.nostalgieG {
+    grid-column: 2/6;
+    grid-row: 7/8;
+}
+
+.scanTYPE1 {
+    grid-column: 2/6;
+    grid-row: 4;
+}
+
+.scanTYPE2 {
+    grid-column: 2/6;
+    grid-row: 5;
+}
+
+.odzG1{
+    grid-column: 2/6;
+    grid-row: 4;
+}
+
+.odzG2{
+    grid-column: 2/4;
+    grid-row: 5;
+}
+
+.odzG3{
+    grid-column: 4/6;
+    grid-row: 5;
+}
+
+.odzG4{
+    grid-column: 2/6;
+    grid-row: 6;
+}
+
+.typoG1{
+    grid-column: 2/6;
+    grid-row: 4;
+}
+
+.grid-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-about img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    transform: scale(1);
+}
+
+.About1-en{
+    font-family: 'Space Grotesk', sans-serif;
+    grid-column: 2/4;
+    grid-row: 1;
+}
+
+.About2-fr{
+    font-family: 'Space Grotesk', sans-serif;
+    font-style: italic;
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+.grid-cv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+}
+
+.grid-cv img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    transform: scale(1);
+}
+
+.CV1{
+    grid-column: 1/2;
+    grid-row: 1;
+}
+
+.CV2{
+    grid-column: 2/4;
+    grid-row: 1;
+}
+
+.contact{
+    text-align: center;
+}
+
+.mailto{
+    color: black;
+}
