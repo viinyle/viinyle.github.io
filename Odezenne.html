@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Moulin - Work - Odezenne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="sticky-header">
+        <nav class="nav">
+            <div class="subnav">
+                <a class="N1 current" href="index.html">WORK</a>
+                <a class="N2" href="about.html">ABOUT</a>
+            </div>
+            <a class="name" href="index.html"><img src="LOGOS/viinyle-logo.svg" alt="viinyle" width="170"
+                    height="170"></a>
+            <a class="insta" href="https://www.instagram.com/_viinyle/"><img src="LOGOS/instagram-seeklogo.com.svg"
+                    alt="instagram" width="48" height="48"></a>
+        </nav>
+    </header>
+
+    <body>
+        <div class="slider-container">
+            <div class="menu">
+                <label for="slide-dot-1"></label>
+                <label for="slide-dot-2"></label>
+                <label for="slide-dot-3"></label>
+                <label for="slide-dot-4"></label>
+                <label for="slide-dot-5"></label>
+            </div>
+            <ol class="carousel__viewport">
+            <input class="slide-input" id="slide-dot-1" type="radio" name="slides" checked>
+            <img class="slide-img" src="projets/odz-1-principale.png">
+           
+            <input class="slide-input" id="slide-dot-2" type="radio" name="slides">
+            <img class="slide-img" src="projets/odezenne/boite1.JPG">
+
+            <input class="slide-input" id="slide-dot-3" type="radio" name="slides">
+            <img class="slide-img" src="projets/odezenne/déroulant odz.jpg">
+
+            <input class="slide-input" id="slide-dot-4" type="radio" name="slides">
+            <img class="slide-img" src="projets/odezenne/déroulant odz2.jpg">
+
+            <input class="slide-input" id="slide-dot-5" type="radio" name="slides">
+            <img class="slide-img" src="projets/odezenne/déroulant odz3.jpg">
+            </ol>
+        </div>
+
+        <script>
+            const slides = document.querySelectorAll('.slide-input');
+            const labels = document.querySelectorAll('.menu label');
+            let lastIndex = 0;
+        
+            slides.forEach((slide, index) => {
+                slide.addEventListener('change', () => {
+                    labels.forEach(label => label.style.backgroundColor = '');
+                    labels[index].style.backgroundColor = 'grey';
+        
+                    if (lastIndex > index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-left');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-right');
+                    } else if (lastIndex < index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-right');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-left');
+                    }
+                    lastIndex = index;
+                   
+                    setTimeout(() => {
+                        document.querySelectorAll('.slide-img').forEach(img => {
+                            img.classList.remove('slide-enter-right', 'slide-enter-left');
+                        });
+                    }, 1000);
+                });
+            });
+        </script>
+        
+
+        <h1 class="h1-odz">Odezenne</h1>
+        
+        <div class="grid-texte">
+         <p class="T1-en">Odezenne is a French alternative band that I’ve been listening to for a very long time.
+            For this project, I created a box based on the band’s musical and textual universe. So I came up with a
+            fictiv merch including several editions, stickers, posters and three vinyl records with the thirty-two
+            tracks from their Live album.
+            I really enjoyed working around something so abstract as musical identity. The boxed set contains: Three
+            editions; Odezenne le rap ovniesque, Merci Odezene, Live. A thirty-two photo serie associated with each
+            track, three vinyl records, a flipbook, a bottle of whisky, a concert ticket, four posters and a silkscreen
+            print.</p>
+        <p class="T1-fr">Odezenne est un goupe de musique alternative française que j’écoute et que je suis activement
+            depuis un long moment.
+            Dans ce projet, j’ai réalisé une boite autour de l’univers musical et textuel du groupe. J’ai donc imaginé
+            un merch fictif en designant plusieurs éditions, sitkcers, posters et trois vinyles comprenant les
+            trente-deux musiques de leur album Live.
+            J’ai beaucoup aimé travailler autour de quelque chose de si abstrait qu’est l’identité musicale. Le coffret
+            contient donc précisémment : Trois éditions ; Odezenne le rap ovniesque, Merci Odezene, Live. Une série de
+            photographies associées à chaque morceaux, trois vinyles, un flipbook, Une bouteille de whisky, une place de
+            concert, quatre posters et une sérigraphie.</p>
+        </div>
+       <div class="grid-petites">
+        <img class="child-1" src="projets/odezenne/boite1.JPG" alt="boite1">
+        <img class="child-2" src="projets/odezenne/boite3.JPG" alt="boite3">
+        <img class="child-3" src="projets/odezenne/boite5.JPG" alt="boite15">
+        <img class="child-4" src="projets/odezenne/boite6.JPG" alt="boite6">
+
+        <img class="odzG1" src="projets/odezenne/edPRINCIPAL3.png" alt="ed1odz">
+        <img class="odzG2" src="projets/odezenne/sticky-odz.png" alt="ed1odz">
+        <img class="odzG3" src="projets/odezenne/bouteilleODZ.png" alt="bouteille">
+        <img class="odzG4" src="projets/odezenne/edPRINCIPAL2.png" alt="bouteille">
+
+       </div>
+    </body>
+
+</html>

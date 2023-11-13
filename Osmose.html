@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Moulin - Work - Osmose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="sticky-header">
+        <nav class="nav">
+            <div class="subnav">
+                <a class="N1 current" href="index.html">WORK</a>
+                <a class="N2" href="about.html">ABOUT</a>
+            </div>
+            <a class="name" href="index.html"><img src="LOGOS/viinyle-logo.svg" alt="viinyle" width="170"
+                    height="170"></a>
+            <a class="insta" href="https://www.instagram.com/_viinyle/"><img src="LOGOS/instagram-seeklogo.com.svg"
+                    alt="instagram" width="48" height="48"></a>
+        </nav>
+    </header>
+
+    <body>
+        <div class="banner">
+            <div class="wip">
+              <span class="txt t1"> WORK IN PROGRESS&nbsp;</span>
+              <span class="txt t2"> WORK IN PROGRESS&nbsp;</span>
+              <span class="txt t3"> WORK IN PROGRESS&nbsp;</span>
+              <span class="txt t4"> WORK IN PROGRESS&nbsp;</span>
+            </div>
+          </div>
+
+        <div class="slider-container">
+            <div class="menu">
+                <label for="slide-dot-1"></label>
+                <label for="slide-dot-2"></label>
+            </div>
+
+            <input class="slide-input" id="slide-dot-1" type="radio" name="slides" checked>
+            <img class="slide-img" src="projets/osmosepay.jpg">
+
+            <input class="slide-input" id="slide-dot-2" type="radio" name="slides">
+            <img class="slide-img" src="projets/osmose/osmose1.jpg">
+         </div>
+
+         <script>
+            const slides = document.querySelectorAll('.slide-input');
+            const labels = document.querySelectorAll('.menu label');
+            let lastIndex = 0;
+        
+            slides.forEach((slide, index) => {
+                slide.addEventListener('change', () => {
+                    labels.forEach(label => label.style.backgroundColor = '');
+                    labels[index].style.backgroundColor = 'grey';
+        
+                    if (lastIndex > index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-left');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-right');
+                    } else if (lastIndex < index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-right');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-left');
+                    }
+                    lastIndex = index;
+                   
+                    setTimeout(() => {
+                        document.querySelectorAll('.slide-img').forEach(img => {
+                            img.classList.remove('slide-enter-right', 'slide-enter-left');
+                        });
+                    }, 1000);
+                });
+            });
+        </script>
+        
+        <h1 class="h1-odz">Osmose</h1>
+
+        <div class="grid-texte">
+            <p class="T1-en"> WIP : Osmose is an illustration project. Two people come together in a short story about
+                the social pressure we all face. The idea here was to tell a story through different settings and
+                framing. The full plates are coming soon on the website.</p>
+            <p class="T1-fr">Osmose est un projet d'illustration. Deux êtres se retrouvent dans une courte histoire
+                traitant de la pression sociale exercée sur chacun de nous. L'idée était ici de raconter une histoire à
+                travers différentes mises en scène et différents cadrages. Les planches complètes sont à venir.</p>
+        </div>
+    </body>
+
+</html>

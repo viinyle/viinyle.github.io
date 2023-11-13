@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Moulin - Work - GAB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="sticky-header">
+        <nav class="nav">
+            <div class="subnav">
+                <a class="N1 current" href="index.html">WORK</a>
+                <a class="N2" href="about.html">ABOUT</a>
+            </div>
+            <a class="name" href="index.html"><img src="LOGOS/viinyle-logo.svg" alt="viinyle" width="170"
+                    height="170"></a>
+            <a class="insta" href="https://www.instagram.com/_viinyle/"><img src="LOGOS/instagram-seeklogo.com.svg"
+                    alt="instagram" width="48" height="48"></a>
+        </nav>
+    </header>
+
+    <body>
+        <div class="slider-container">
+            <div class="menu">
+                <label for="slide-dot-1"></label>
+                <label for="slide-dot-2"></label>
+                <label for="slide-dot-3"></label>
+                <label for="slide-dot-4"></label>
+                <label for="slide-dot-5"></label>
+            </div>
+
+            <input class="slide-input" id="slide-dot-1" type="radio" name="slides" checked>
+            <img class="slide-img" src="projets/GAB/GAB1.png">
+
+            <input class="slide-input" id="slide-dot-2" type="radio" name="slides">
+            <img class="slide-img" src="projets/GAB/GAB2.png">
+
+            <input class="slide-input" id="slide-dot-3" type="radio" name="slides">
+            <img class="slide-img" src="projets/GAB/GAB3.png">
+
+            <input class="slide-input" id="slide-dot-4" type="radio" name="slides">
+            <img class="slide-img" src="projets/GAB/GAB4.png">
+
+            <input class="slide-input" id="slide-dot-5" type="radio" name="slides">
+            <img class="slide-img" src="projets/GAB/GAB6.png">
+        </div>
+
+        <script>
+            const slides = document.querySelectorAll('.slide-input');
+            const labels = document.querySelectorAll('.menu label');
+            let lastIndex = 0;
+        
+            slides.forEach((slide, index) => {
+                slide.addEventListener('change', () => {
+                    labels.forEach(label => label.style.backgroundColor = '');
+                    labels[index].style.backgroundColor = 'grey';
+        
+                    if (lastIndex > index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-left');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-right');
+                    } else if (lastIndex < index) {
+                        document.querySelectorAll('.slide-img')[lastIndex].classList.add('slide-enter-right');
+                        document.querySelectorAll('.slide-img')[index].classList.add('slide-enter-left');
+                    }
+                    lastIndex = index;
+                   
+                    setTimeout(() => {
+                        document.querySelectorAll('.slide-img').forEach(img => {
+                            img.classList.remove('slide-enter-right', 'slide-enter-left');
+                        });
+                    }, 1000);
+                });
+            });
+        </script>
+        
+        <h1 class="h1-odz">G.A.B</h1>
+
+        <div class="grid-texte">
+            <p class="T1-en">Grimp' à bloc is a climbing hall founded in 2012 by passionate climbers. Located at 12 rue
+                Louis Colbert in Amiens, this space offers a multitude of routes to explore, always being renewed. But in
+                my opinion, it also offers a gigantic source of graphic inspiration.
+
+                G.A.B is a graphic analysis of the space, in which I'm particularly interested in the direction of
+                reading in space. Contrary to the left-to-right reading direction to which we Westerners are accustomed,
+                this space can be read in all directions.
+                But I've also worked on signage and other forms.</p>
+            <p class="T1-fr">Grimp' à bloc est une salle d'escalade de bloc fondée en 2012 par des grimpeurs passionnés.
+                Située au 12 rue Louis Colbert à Amiens, cette salle offre une multitude de voies à explorer, toujours
+                en renouvellement. Mais elle offre aussi selon moi une source gigantesque d'inspirations graphiques.
+
+                G.A.B est une analyse graphique du lieu, dans laquelle je m'intéresse particulièrement au sens de
+                lecture dans l'espace. Contrairement au sens de lecture de gauche à droite auquel nous sommes, nous
+                occidentaux, habitués, cet espace se lit dans tous les sens.
+                Mais j'ai également travaillé sur la signalétique du lieu et autres formes.</p>
+                </div>
+
+         <div class="grid-petites">
+            <img class="child-1" src="projets/GAB/GAB5.png" alt="GAB5">
+            <img class="child-2" src="projets/GAB/coverGAB.JPG" alt="boite3">
+            <img class="child-3" src="projets/GAB/GAB7.png" alt="GAB7">
+            <img class="child-4" src="projets/GAB/GABed1.JPG" alt="boite6">
+        </div>
+    </body>
+
+</html>
