@@ -391,6 +391,7 @@ slide-input:checked + label {
 
 .contact{
     text-align: center;
+	font-family: 'Space Grotesk', sans-serif;
 }
 
 .mailto{
